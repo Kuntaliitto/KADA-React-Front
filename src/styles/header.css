@@ -1,0 +1,120 @@
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0, 55, 94, 0.7);
+    height: 125px;
+    color: white;
+    font-size: 14px;
+}
+
+.header .top-navi {
+  height: 80px;
+  padding: 10px 10vw;
+}
+
+.header .top-navi .left {
+    display: inline-block;
+}
+
+.header .top-navi .right {
+    float: right;
+}
+
+.header .top-navi .right .search {
+  text-align: right;
+}
+
+.header .top-navi .right .contrast {
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+    vertical-align: text-bottom;
+    cursor: pointer;
+}
+
+.header .top-navi .right .textsize {
+    margin-left: 10px;
+}
+
+.header .top-navi .right .small {
+    font-size: 14px;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+.header .top-navi .right .medium {
+    font-size: 17px;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+.header .top-navi .right .large {
+    font-size: 20px;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+.header .top-navi .right .search input {
+    height: 36px;
+    width: 280px;
+    position: relative;
+    font-size: 14px;
+    padding: 7px 14px;
+    margin-left: 10px;
+}
+
+.header .top-navi .right .search input::after {
+    position: absolute;
+    left: 3px;
+    content: "XXX";
+    color: red;
+}
+
+.header .top-navi .right .search button {
+    height: 36px;
+    width: 60px;
+    margin-left: 5px;
+    text-transform: uppercase;
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+}
+
+.header .top-navi .right .navi {
+  margin-top: 8px;
+}
+
+.header .top-navi .right .navi a {
+    color: white;
+    text-transform: uppercase;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.header .top-navi .right .navi a:hover {
+    text-decoration: underline;
+}
+
+.header .main-navi {
+  height: 45px;
+  background-color: white;
+  color: rgb(29, 29, 26);
+  text-align: center;
+  padding: 10px;
+}
+
+.header .main-navi a {
+    color: rgb(29, 29, 26);
+    margin-right: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 25px;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.header .main-navi a:hover {
+    background-color: rgb(248, 187, 78);
+}
