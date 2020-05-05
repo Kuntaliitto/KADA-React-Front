@@ -1,0 +1,342 @@
+:global(.turku) .featured {
+    background-color: #acacac;
+    font-size: 16px;
+
+    .content {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 30px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1%;
+        row-gap: 12px;
+
+        .featuredArticle {
+            background-color: white;
+            height: 400px;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+
+            &.size1 {
+                grid-column-end: span 1;
+            }
+
+            &.size2 {
+                grid-column-end: span 2;
+            }
+
+            &::after {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                content: " ";
+                height: 25px;
+                width: 25px;
+                background-color: white;
+                transform: rotate(45deg);
+                margin: -12.5px 0 0 -12.5px;
+            }
+
+            .textWrapper {
+                width: 50%;
+                background-color: white;
+                padding: 30px;
+                position: relative;
+                order: 2;
+
+                .date {
+                    font-size: 87.5%;
+                    margin: 0 0 0.1em 0;
+                }
+
+                .title {
+                    color: #1d1d1a;
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin: 0 0 0.5em 0;
+                    text-decoration-color:rgb(29, 29, 26);
+                    cursor: pointer;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                .ingress {
+                    color: #1d1d1a;
+                    font-size: 87.5%;
+                    line-height: 1.6;
+                    margin: 0;
+                }
+
+                &.theme-Oletus    { border-bottom: 4px solid #00aeef; }
+                &.theme-Asuminen  { border-bottom: 4px solid #00a97a; }
+                &.theme-Kulttuuri { border-bottom: 4px solid #ed0c6e; }
+                &.theme-Koulutus  { border-bottom: 4px solid #e56d40; }
+                &.theme-Terveys   { border-bottom: 4px solid #76c6bb; }
+                &.theme-Tapahtuma { border-bottom: 4px solid #f8bb4e; }
+            }
+
+            &:nth-child(2n+1) .textWrapper {
+                order: 2;
+            }
+
+            .imageWrapper {
+                width: 50%;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    min-height: 100%;
+                    min-width: 100%;
+                    background: url('/kuva-puuttuu.jpg') no-repeat scroll 0 0;
+                    background-size: cover;
+                }
+
+                .caption {
+                    position: absolute;
+                    left: 0;
+                    bottom: 20px;
+                    width: 70%;
+                    padding: 10px 20px;
+                    color: white;
+                    font-size: 18px;
+                    font-weight: 200;
+                    line-height: 1.2em;
+
+                    &.theme-Oletus    { background-color: #00aeef; }
+                    &.theme-Asuminen  { background-color: #00a97a; }
+                    &.theme-Kulttuuri { background-color: #ed0c6e; }
+                    &.theme-Koulutus  { background-color: #e56d40; }
+                    &.theme-Terveys   { background-color: #76c6bb; }
+                    &.theme-Tapahtuma { background-color: #f8bb4e; }
+                }
+            }
+
+            &:nth-child(2n) .imageWrapper {
+                order: 2;
+            }
+
+        }
+
+    }
+}
+
+:global(.pori) .featured {
+    background-color: white;
+    font-size: 16px;
+
+    .content {
+        font-family: BergenText;
+        max-width: 100%;
+        padding: 30px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 2%;
+        row-gap: 0;
+
+        .featuredArticle {
+            background-color: white;
+            height: 480px;
+            padding: 32px 0;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            cursor: pointer;
+
+            &.size1 {
+                grid-column-end: span 1;
+            }
+
+            &.size2 {
+                grid-column-end: span 2;
+            }
+
+            &:hover {
+                &.theme-Oletus    { background-color: #00aeef19; }
+                &.theme-Asuminen  { background-color: #e44e3419; }
+                &.theme-Kulttuuri { background-color: #ff820019; }
+                &.theme-Koulutus  { background-color: #ffcd0019; }
+                &.theme-Terveys   { background-color: #00af6619; }
+                &.theme-Tapahtuma { background-color: #009bea19; }
+            }
+
+            &.theme-Oletus    { border-top: .938rem solid #00aeef; }
+            &.theme-Asuminen  { border-top: .938rem solid #e44e34; }
+            &.theme-Kulttuuri { border-top: .938rem solid #ff8200; }
+            &.theme-Koulutus  { border-top: .938rem solid #ffcd00; }
+            &.theme-Terveys   { border-top: .938rem solid #00af66; }
+            &.theme-Tapahtuma { border-top: .938rem solid #009bea; }
+
+            .textWrapper {
+                width: 50%;
+                padding: 0 32px;
+                position: relative;
+                order: 2;
+
+                .date {
+                    font-size: 1.125rem;
+                    line-height: 1.556;
+                    color: #bcbcbc;
+                    margin: 0 0 0.1em 0;
+                }
+
+                .title {
+                    color: #1e1e1e;
+                    font-size: 1.4rem;
+                    line-height: 1.556;
+                    font-weight: Normal;
+                    text-transform: uppercase;
+                    margin: 0 0 0.5em 0;
+                    -webkit-font-smoothing: antialiased;
+                }
+
+                .ingress {
+                    color: #1e1e1e;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    line-height: 1.556;
+                    margin-bottom: 3.15rem;
+                }
+
+            }
+
+            &:nth-child(2n+1) .textWrapper {
+                order: 2;
+            }
+
+            .imageWrapper {
+                width: 50%;
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    min-height: 75%;
+                    min-width: 100%;
+                    background: url('/kuva-puuttuu.jpg') no-repeat scroll 0 0;
+                    background-size: cover;
+                }
+
+                .caption {
+                    display: none;
+                }
+            }
+
+            &:nth-child(2n) .imageWrapper {
+                order: 2;
+            }
+
+        }
+
+    }
+}
+
+:global(.leiska) .featured {
+    background-color: white;
+    font-size: 14px;
+
+    .content {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 15px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-auto-flow: row dense;
+        column-gap: 16px;
+        row-gap: 16px;
+
+        .featuredLink {
+            background-color: #efefef;
+            height: 240px;
+            text-align: center;
+            padding: 0 16px;
+
+            .label {
+                margin-top: 67px;
+                margin-bottom: 16px;
+                height: 54px;
+                font-size: 20px;
+            }
+
+            .icon {
+                height: 40px;
+                width: 40px;
+            }
+
+        }
+
+        .featuredArticle {
+            background-color: white;
+            height: 240px;
+            grid-column: 4 / 6;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+
+            &.size1 {
+                height: 240px;
+            }
+
+            &.size2 {
+                height: 495px;
+            }
+
+            .textWrapper {
+                width: 100%;
+                height: 100px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 0 42px;
+                z-index: 1000;
+
+                .date {
+                    font-size: 87.5%;
+                    margin: 6px 0 2px 0;
+                }
+
+                .title {
+                    font-size: 18px;
+                    line-height: 24px;
+                    margin: 8px 0;
+                }
+
+                .ingress {
+                    display: none;
+                    color: #1d1d1a;
+
+                }
+
+                &.theme-Oletus    { border-top: .938rem solid #00aeef; }
+                &.theme-Asuminen  { border-top: .938rem solid #e44e34; }
+                &.theme-Kulttuuri { border-top: .938rem solid #ff8200; }
+                &.theme-Koulutus  { border-top: .938rem solid #ffcd00; }
+                &.theme-Terveys   { border-top: .938rem solid #00af66; }
+                &.theme-Tapahtuma { border-top: .938rem solid #009bea; }
+                
+            }
+
+            .imageWrapper {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+        }
+
+    }
+}

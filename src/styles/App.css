@@ -1,48 +1,53 @@
-.site-container {
+body {
+  margin: 0;
+}
+
+.siteContainer {
   text-align: left;
-  font-family: "Open Sans",sans-serif;
   font-size: 12px;
+}
+
+.siteContainer.turku {
+  font-family: "Open Sans", sans-serif;
+}
+
+.siteContainer.pori {
+  font-family: "BergenMono", sans-serif;
 }
 
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
-.site-container > div {
+.siteContainer > div {
   width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: BergenText;
+  font-weight: Normal;
+  src: url(/fonts/bergen-text.otf);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+  font-family: BergenText;
+  font-weight: Bold;
+  src: url(/fonts/bergen-text-bold.otf);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@font-face {
+  font-family: BergenMono;
+  font-weight: Normal;
+  src: url(/fonts/bergen-mono.otf);
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+  font-family: BergenMono;
+  font-weight: Bold;
+  src: url(/fonts/bergen-mono-bold.otf);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+  font-family: driveturku;
+  src: url(/fonts/driveturku.woff);
 }

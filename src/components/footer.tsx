@@ -1,15 +1,15 @@
 import React from 'react';
-import '../styles/footer.css'
+import style from '../styles/footer.module.scss'
 
-const FooterNavi = (props:any) => <div className="navi-block">
-    <a className="title" href="https://turku.fi">{ props.title }</a>
+const FooterNavi = (props:any) => <div className={ style.naviBlock }>
+    <a className={ style.title } href="https://turku.fi">{ props.title }</a>
     <ul>
-    { props.links.map((text:string, i:number) => <li key={ i }><a href="https://turku.fi">{ text }</a></li>) }
+    { props.links.map((text:string, i:number) => <li key={ i }><a className={ style.subtitle } href="https://turku.fi">{ text }</a></li>) }
     </ul>
 </div>
 
-const Footer:any = () => <div className="footer">
-    <div className="info-wrapper">
+const Footer:any = () => <div className={ style.footer }>
+    <div className={ style.infoWrapper }>
         <img src="/logo-footer.png" alt="Turun vaakuna" />
         <p>© Turun kaupunki</p>
         <p>&ensp;</p>
@@ -18,12 +18,12 @@ const Footer:any = () => <div className="footer">
         <p>turun.kaupunki@turku.fi</p>
         <p>etunimi.sukunimi@turku.fi</p>
     </div>
-    <div className="menu-wrapper">
-        <FooterNavi title="ORGANISAATIO" links={[ "Kaupungin johto","Konsernihallinto","Palvelukeskukset","Toimialat","Yhtiöt ja yhteisöt" ]} />
-        <FooterNavi title="PÄÄTÖKSENTEKO" links={[ "Kaupunginvaltuusto","Kaupunginhallitus","Lautakunnat","Sidonnaisuudet","Osallistu ja vaikuta","Kuulutukset" ]} />
-        <FooterNavi title="TALOUS JA STRATEGIA" links={[ "Kehittämishankkeet ja projektit","Rahoitus ja sijoitus","Strategiat ja ohjelmat","Talousarvio","Tilinpäätös ja seurantaraportit" ]} />
-        <FooterNavi title="TURKU-TIETO" links={[ "Arkistot","Avoin data","Julkaisut ja raportit","Kartat ja paikkatieto","Kaupunkitutkimus","Media","Tietosuoja","Tilastot" ]} />
-        <FooterNavi title="OTA YHTEYTTÄ" links={[ "Anna palautetta","Asioi verkossa","Avoimet työpaikat","Avustukset","Laskutus ja maksaminen","Neuvonta","Palveluhakemisto","Vuokrattavat tilat","Yhteystiedot" ]} />
+    <div className={ style.menuWrapper }>
+        <FooterNavi title="Organisaatio" links={[ "Kaupungin johto","Konsernihallinto","Palvelukeskukset","Toimialat","Yhtiöt ja yhteisöt" ]} />
+        <FooterNavi title="Päätöksenteko" links={[ "Kaupunginvaltuusto","Kaupunginhallitus","Lautakunnat","Sidonnaisuudet","Osallistu ja vaikuta","Kuulutukset" ]} />
+        <FooterNavi title="Talous ja strategia" links={[ "Kehittämishankkeet ja projektit","Rahoitus ja sijoitus","Strategiat ja ohjelmat","Talousarvio","Tilinpäätös ja seurantaraportit" ]} />
+        <FooterNavi title="Turku-tieto" links={[ "Arkistot","Avoin data","Julkaisut ja raportit","Kartat ja paikkatieto","Kaupunkitutkimus","Media","Tietosuoja","Tilastot" ]} />
+        <FooterNavi title="Ota yhteyttä" links={[ "Anna palautetta","Asioi verkossa","Avoimet työpaikat","Avustukset","Laskutus ja maksaminen","Neuvonta","Palveluhakemisto","Vuokrattavat tilat","Yhteystiedot" ]} />
     </div>
 </div>;
 
