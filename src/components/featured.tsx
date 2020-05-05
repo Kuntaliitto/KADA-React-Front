@@ -1,28 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import classNames from 'classnames/bind';
 import style from '../styles/featured.module.scss';
-import fetch from 'cross-fetch';
-import ApolloClient from 'apollo-client';
+import { useQuery } from "@apollo/react-hooks";
 import moment from 'moment';
-import { createHttpLink } from 'apollo-link-http';
-import { InMemoryCache } from 'apollo-cache-inmemory';
 import { NewsArticle } from '../interfaces';
-import { GET_FEATURED, GET_FEATURED_2 } from '../queries';
-
-const client = new ApolloClient({
-    link: createHttpLink({
-//        uri: 'http://localhost:4000',
-        uri: 'http://local.pori.fi:9100/graphql',
-        fetch: fetch
-    }),
-    cache: new InMemoryCache()
-});
-
-const doQuery = () => {
-    return client
-        .query({ query: GET_FEATURED_2 })
-        .then(result => result.data.news);
-}
+import { GET_FEATURED } from '../queries';
 
 interface FeaturedArticleProps {
     key: String,
@@ -61,7 +43,6 @@ const FeaturedLink = (props:any) => {
     )
 }
 
-
 const dummyLinks:Array<{ label:String, icon:String }> = [
     { label: 'Bussit ja aikataulut', icon: 'bussit-ja-aikataulut.png' }, 
     { label: 'Tapahtumat', icon: 'kalenteri.png' },
@@ -75,9 +56,9 @@ const dummyLinks:Array<{ label:String, icon:String }> = [
 ];
 
 const Featured:any = (props:any) => {
-    const [ articles, setArticles ] = useState<Array<any>>([]);
+    const { loading, error, data } = useQuery(GET_FEATURED);
+    const articles = data ? data.news : [];
     const links = dummyLinks;
-    useEffect(() => { doQuery().then(list => setArticles(list)) }, []);
 
     const openArticle = (id:string) => {
         alert ("Avataan artikkeli " + id);
