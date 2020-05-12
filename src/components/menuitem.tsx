@@ -16,7 +16,8 @@ const SecondLevelItem = (props:any) => {
         <li className={ style.secondLevelMenuItem }>
             { content.label }
             <ul className={ style.thirdLevelMenu }>
-                { content.thirdLevel.map((sub:any) => <li className={ style.thirdLevelMenuItem }>{sub}</li> )}
+                { content.thirdLevel.map((sub:any, i:number) =>
+                    <li key={ `nav3-${i}` } className={ style.thirdLevelMenuItem }>{sub}</li> )}
             </ul>
         </li>
     )
@@ -46,11 +47,11 @@ const MenuItem = (props:MenuItemProps) => {
             { content.label }
             <ul className={ classNames(style.secondLevelMenu, style[`theme-${content.theme}`]) }>
                 <div>
-                    { content.subMenu.map((subMenuItem, i) => <SecondLevelItem key={ `sub${i}` } content={ subMenuItem } />) }
+                    { content.subMenu.map((subMenuItem, i) => <SecondLevelItem key={ `nav2-${i}` } content={ subMenuItem } />) }
                 </div>
                 <div></div>
                 <div className={ style.quickLinkWrapper }>
-                    { content.quickLinks.map((quickLink, i) => <QuickLink key={ `link${i}` } content={{ ...quickLink, theme:content.theme }} />) }
+                    { content.quickLinks.map((quickLink, i) => <QuickLink key={ `link-${i}` } content={{ ...quickLink, theme:content.theme }} />) }
                 </div>
             </ul>
         </li>
